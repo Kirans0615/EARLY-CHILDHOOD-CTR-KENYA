@@ -26,7 +26,7 @@ export default function AboutPage() {
       <section className="relative isolate bg-charcoal text-ivory pt-44 md:pt-52 pb-28 overflow-hidden">
         <div className="absolute inset-0 -z-10" aria-hidden>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={ASSETS.mission1} alt="" className="h-full w-full object-cover opacity-25" />
+           <img src={ASSETS.mission1} alt="" className="h-full w-full object-cover opacity-25" loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-charcoal/30 via-charcoal/70 to-charcoal" />
         </div>
         <FlameParticles count={24} zClass="z-0" />

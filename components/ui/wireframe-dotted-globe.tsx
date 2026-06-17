@@ -1,7 +1,12 @@
 "use client";
 
 import * as React from "react";
-import * as d3 from "d3";
+import {
+  geoOrthographic,
+  geoPath,
+  geoGraticule10,
+  geoContains,
+} from "d3-geo";
 import * as topojson from "topojson-client";
 
 type WorldTopology = {
@@ -58,8 +63,8 @@ export function RotatingEarth({
     let height = 0;
     let raf = 0;
     let landFeature: GeoJSON.Feature | null = null;
-    const projection = d3.geoOrthographic().clipAngle(90).rotate([0, -20, 0]);
-    const path = d3.geoPath(projection, ctx);
+    const projection = geoOrthographic().clipAngle(90).rotate([0, -20, 0]);
+    const path = geoPath(projection, ctx);
 
     const resize = () => {
       const r = wrap.getBoundingClientRect();
@@ -109,7 +114,7 @@ export function RotatingEarth({
       ctx.stroke();
 
       /* Graticule */
-      const graticule = d3.geoGraticule10();
+      const graticule = geoGraticule10();
       ctx.beginPath();
       path(graticule);
       ctx.strokeStyle = "rgba(255,255,255,0.06)";
@@ -120,7 +125,7 @@ export function RotatingEarth({
       if (landFeature) {
         ctx.fillStyle = dotColor;
         for (const [lon, lat] of dots) {
-          const visible = d3.geoContains(landFeature, [lon, lat]);
+          const visible = geoContains(landFeature, [lon, lat]);
           if (!visible) continue;
           const p = projection([lon, lat]);
           if (!p) continue;
@@ -222,3 +227,7 @@ export function RotatingEarth({
     </div>
   );
 }
+
+/** Default export for next/dynamic — lazy loaded from GlobalReach. */
+export default RotatingEarth;
+

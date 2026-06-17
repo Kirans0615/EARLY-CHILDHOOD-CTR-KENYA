@@ -16,7 +16,7 @@ export function KenyaHomeFeature() {
     <section className="relative isolate text-ivory overflow-hidden" style={{ minHeight: "88vh" }}>
       <div className="absolute inset-0 -z-10" aria-hidden>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={ASSETS.kenya} alt="" className="h-full w-full object-cover" />
+         <img src={ASSETS.kenya} alt="" className="h-full w-full object-cover" loading="lazy" decoding="async" />
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/35 via-charcoal/65 to-charcoal/97" />
       </div>
 

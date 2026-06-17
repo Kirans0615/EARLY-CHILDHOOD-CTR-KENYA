@@ -13,7 +13,7 @@ export function Footer() {
       <div className="container py-20 text-center">
         <CrossMark className="h-10 w-auto mx-auto text-flame mb-8" strokeWidth={2} />
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={ASSETS.logo} alt="TSM" className="h-16 w-16 object-contain mx-auto mb-5 opacity-90" />
+         <img src={ASSETS.logo} alt="TSM" className="h-16 w-16 object-contain mx-auto mb-5 opacity-90" loading="lazy" decoding="async" />
         <p className="font-display text-2xl md:text-3xl tracking-ember mb-3">
           Transforming Spirit Ministries
         </p>

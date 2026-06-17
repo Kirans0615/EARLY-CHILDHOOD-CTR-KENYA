@@ -21,14 +21,22 @@ export function HeroSection() {
       className="relative isolate overflow-hidden bg-charcoal text-ivory"
       style={{ minHeight: "100dvh" }}
     >
+      {/* Preload the hero AVIF — hoisted into <head> by Next 14. */}
+      {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+      <link rel="preload" as="image" href={ASSETS.hero} />
+
       {/* Background photo */}
       <div className="absolute inset-0 -z-30" aria-hidden>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={ASSETS.hero}
           alt=""
+          width={1920}
+          height={1280}
           className="h-full w-full object-cover object-center"
           loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
       </div>
 
@@ -68,7 +76,11 @@ export function HeroSection() {
         <img
           src={ASSETS.logo}
           alt=""
+          width={400}
+          height={400}
           className="h-full w-auto object-contain"
+          loading="eager"
+          decoding="async"
           style={{ opacity: 0.07, filter: "saturate(1.4)" }}
         />
       </div>

@@ -49,7 +49,7 @@ export default function ProjectsPage() {
               <div className={`container grid lg:grid-cols-2 gap-0 items-stretch ${reverse ? "lg:[direction:rtl]" : ""}`}>
                 <div className="relative lg:[direction:ltr]" style={{ minHeight: "55vh" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={p.image} alt="" className="absolute inset-0 h-full w-full object-cover" />
+                   <img src={p.image} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async" />
                 </div>
                 <div className="relative lg:[direction:ltr] flex flex-col justify-center px-8 md:px-16 py-16 md:py-24">
                   <p className="label-spaced text-flame mb-3 flex items-center gap-2">

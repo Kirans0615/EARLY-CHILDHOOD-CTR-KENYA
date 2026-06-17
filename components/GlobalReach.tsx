@@ -1,9 +1,25 @@
 "use client";
 
 import * as React from "react";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import { RotatingEarth } from "@/components/ui/wireframe-dotted-globe";
 import { EASE_BLUR } from "@/lib/utils";
+
+/* Globe is heavy (d3-geo + GeoJSON fetch + canvas rendering).
+   Defer it until the section enters the viewport. */
+const RotatingEarth = dynamic(
+  () => import("@/components/ui/wireframe-dotted-globe"),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center w-full aspect-square rounded-2xl border border-orange/25 bg-charcoal-deep/50">
+        <div className="label-spaced text-flame animate-pulse text-[0.7rem]">
+          Mapping the nations…
+        </div>
+      </div>
+    ),
+  }
+);
 
 const REGIONS = [
   { key: "ea", name: "East Africa" },

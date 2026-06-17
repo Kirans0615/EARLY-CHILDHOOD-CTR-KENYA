@@ -22,7 +22,7 @@ export function KenyaImmersive() {
     <section className="relative isolate text-ivory" style={{ minHeight: "92vh" }}>
       <div className="absolute inset-0 -z-10" aria-hidden>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={ASSETS.kenya} alt="" className="h-full w-full object-cover" />
+         <img src={ASSETS.kenya} alt="" className="h-full w-full object-cover" loading="lazy" decoding="async" />
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/40 via-charcoal/65 to-charcoal/95" />
         <div className="absolute inset-0 bg-ember-glow opacity-55" />
       </div>

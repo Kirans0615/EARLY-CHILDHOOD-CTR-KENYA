@@ -25,7 +25,7 @@ export default function StudentMissionsPage() {
       <section className="relative bg-charcoal text-ivory pt-44 md:pt-52 pb-24 overflow-hidden">
         <div className="absolute inset-0 -z-10" aria-hidden>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={ASSETS.mission1} alt="" className="h-full w-full object-cover opacity-30" />
+           <img src={ASSETS.mission1} alt="" className="h-full w-full object-cover opacity-30" loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-charcoal/30 via-charcoal/65 to-charcoal" />
         </div>
         <ScriptureWatermark text="GO" className="text-ivory/[0.04]" />

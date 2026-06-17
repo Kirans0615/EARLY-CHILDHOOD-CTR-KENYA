@@ -65,7 +65,7 @@ export function StudentMagazine() {
                 style={{ minHeight: "60vh" }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={b.image} alt="" className="absolute inset-0 h-full w-full object-cover" />
+                 <img src={b.image} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 via-transparent to-transparent" />
               </motion.div>
 

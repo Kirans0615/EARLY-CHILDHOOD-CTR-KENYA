@@ -37,7 +37,7 @@ export default function KenyaPage() {
           </div>
           <div className="relative aspect-[4/5] overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={ASSETS.kenya} alt="Eta Prime Wing — Kisumu, Kenya" className="absolute inset-0 h-full w-full object-cover" />
+             <img src={ASSETS.kenya} alt="Eta Prime Wing — Kisumu, Kenya" className="absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async" />
           </div>
         </div>
       </section>

@@ -55,6 +55,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={`${inter.variable} ${cinzel.variable} ${cormorant.variable} ${eb.variable}`}
     >
+      <head>
+        {/* Resource hints — pre-connect to the external domains the site hits. */}
+        <link rel="preconnect" href="https://raw.githubusercontent.com" />
+        <link rel="dns-prefetch" href="https://raw.githubusercontent.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className="font-sans min-h-screen flex flex-col bg-ivory text-charcoal">
         <Navbar />
         <main className="flex-1">
