@@ -33,6 +33,8 @@ interface RotatingEarthProps {
   dotColor?: string;
   /** Outer ring glow color */
   glowColor?: string;
+  /** Cap rendering FPS — default 30 */
+  maxFps?: number;
 }
 
 const WORLD_URL =
@@ -41,12 +43,13 @@ const WORLD_URL =
 export function RotatingEarth({
   className,
   scale = 280,
-  rotateSpeed = 6,
+  rotateSpeed = 4,
   dotSpacing = 4,
   oceanColor = "#0a0d14",
   landStrokeColor = "rgba(255, 250, 235, 0.85)",
   dotColor = "rgba(225, 220, 200, 0.55)",
   glowColor = "rgba(201,168,76,0.25)",
+  maxFps = 30,
 }: RotatingEarthProps) {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
   const wrapRef = React.useRef<HTMLDivElement>(null);
@@ -58,13 +61,18 @@ export function RotatingEarth({
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let dpr = window.devicePixelRatio || 1;
+    const dpr = window.devicePixelRatio || 1;
     let width = 0;
     let height = 0;
     let raf = 0;
     let landFeature: GeoJSON.Feature | null = null;
+    /* Pre-filtered dots that sit on land — populated ONCE after world data loads.
+       This eliminates the per-frame geoContains call, which was the single hottest
+       hot spot. After this, per-frame work is just projection + a batched fill. */
+    let landDots: Array<[number, number]> = [];
     const projection = geoOrthographic().clipAngle(90).rotate([0, -20, 0]);
     const path = geoPath(projection, ctx);
+    const frameInterval = 1000 / maxFps;
 
     const resize = () => {
       const r = wrap.getBoundingClientRect();
@@ -82,12 +90,12 @@ export function RotatingEarth({
     const ro = new ResizeObserver(resize);
     ro.observe(wrap);
 
-    /* Pre-compute halftone dot grid (lng,lat). */
-    const dots: Array<[number, number]> = [];
+    /* Pre-compute the full halftone dot grid (lng,lat). Cheap, ~3k points. */
+    const dotGrid: Array<[number, number]> = [];
     for (let lat = -80; lat <= 80; lat += dotSpacing) {
       const ringSpacing = dotSpacing / Math.cos((lat * Math.PI) / 180);
       for (let lon = -180; lon <= 180; lon += ringSpacing) {
-        dots.push([lon, lat]);
+        dotGrid.push([lon, lat]);
       }
     }
 
@@ -121,21 +129,25 @@ export function RotatingEarth({
       ctx.lineWidth = 0.5;
       ctx.stroke();
 
-      /* Halftone dots on land */
-      if (landFeature) {
+      if (landFeature && landDots.length > 0) {
+        /* Halftone dots on land — BATCHED into a single path.
+           One beginPath, many moveTo/arc, ONE fill. Massive win vs the
+           prior per-dot beginPath+fill cycle. */
         ctx.fillStyle = dotColor;
-        for (const [lon, lat] of dots) {
-          const visible = geoContains(landFeature, [lon, lat]);
-          if (!visible) continue;
-          const p = projection([lon, lat]);
-          if (!p) continue;
+        ctx.beginPath();
+        const r2 = r * r;
+        for (let i = 0; i < landDots.length; i++) {
+          const p = projection(landDots[i]);
+          if (!p) continue; // culled by clipAngle (back hemisphere)
           const dx = p[0] - cx;
           const dy = p[1] - cy;
-          if (dx * dx + dy * dy > r * r) continue;
-          ctx.beginPath();
-          ctx.arc(p[0], p[1], 0.9, 0, Math.PI * 2);
-          ctx.fill();
+          if (dx * dx + dy * dy > r2) continue;
+          /* moveTo first so each arc starts a new sub-path that doesn't
+             connect to the previous dot. */
+          ctx.moveTo(p[0] + 1, p[1]);
+          ctx.arc(p[0], p[1], 1, 0, Math.PI * 2);
         }
+        ctx.fill();
 
         /* Land outlines on top */
         ctx.beginPath();
@@ -146,24 +158,25 @@ export function RotatingEarth({
       }
     };
 
+    let lastDrawAt = 0;
     let lastTs = performance.now();
     const tick = (ts: number) => {
+      raf = requestAnimationFrame(tick);
+      if (ts - lastDrawAt < frameInterval) return;
       const dt = (ts - lastTs) / 1000;
       lastTs = ts;
+      lastDrawAt = ts;
       const [lambda, phi, gamma] = projection.rotate();
       projection.rotate([lambda + rotateSpeed * dt, phi, gamma]);
       draw();
-      raf = requestAnimationFrame(tick);
     };
 
     /* Drag to rotate */
     let dragging = false;
     let lastX = 0;
     let lastY = 0;
-    let savedAuto = true;
     const onDown = (e: PointerEvent) => {
       dragging = true;
-      savedAuto = true;
       lastX = e.clientX;
       lastY = e.clientY;
       canvas.setPointerCapture(e.pointerId);
@@ -197,12 +210,18 @@ export function RotatingEarth({
     };
     canvas.addEventListener("wheel", onWheel, { passive: false });
 
-    /* Boot: fetch world topology, start loop */
+    /* Boot: fetch world topology, pre-filter dots on land, start loop. */
     fetch(WORLD_URL)
       .then((r) => r.json() as Promise<WorldTopology>)
       .then((world) => {
         // @ts-expect-error topojson objects shape comes from CDN file
         landFeature = topojson.feature(world, world.objects.land) as GeoJSON.Feature;
+        /* Filter the dot grid ONCE — keep only dots over land. ~70% reduction. */
+        const onLand: Array<[number, number]> = [];
+        for (let i = 0; i < dotGrid.length; i++) {
+          if (geoContains(landFeature, dotGrid[i])) onLand.push(dotGrid[i]);
+        }
+        landDots = onLand;
         raf = requestAnimationFrame(tick);
       })
       .catch(() => {
@@ -219,7 +238,7 @@ export function RotatingEarth({
       canvas.removeEventListener("pointercancel", onUp);
       canvas.removeEventListener("wheel", onWheel);
     };
-  }, [scale, rotateSpeed, dotSpacing, oceanColor, landStrokeColor, dotColor, glowColor]);
+  }, [scale, rotateSpeed, dotSpacing, oceanColor, landStrokeColor, dotColor, glowColor, maxFps]);
 
   return (
     <div ref={wrapRef} className={className} style={{ width: "100%", aspectRatio: "1 / 1" }}>
@@ -230,4 +249,3 @@ export function RotatingEarth({
 
 /** Default export for next/dynamic — lazy loaded from GlobalReach. */
 export default RotatingEarth;
-
