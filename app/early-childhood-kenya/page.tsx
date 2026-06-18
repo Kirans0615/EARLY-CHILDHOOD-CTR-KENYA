@@ -35,9 +35,15 @@ export default function KenyaPage() {
               </Button>
             </div>
           </div>
-          <div className="relative aspect-[4/5] overflow-hidden">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-sm shadow-xl">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-             <img src={ASSETS.kenya} alt="Eta Prime Wing — Kisumu, Kenya" className="absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async" />
+            <img
+              src="https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/pexels-ric-andy-75704468-8579176.jpg"
+              alt="Children at the Eta Prime Wing — Kisumu, Kenya"
+              className="absolute inset-0 h-full w-full object-cover object-center"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </section>
