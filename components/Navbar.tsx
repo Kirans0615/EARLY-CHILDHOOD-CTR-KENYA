@@ -87,7 +87,7 @@ export function Navbar() {
             <img
               src={ASSETS.logo}
               alt="Transforming Spirit Ministries"
-              className="h-10 w-10 object-contain transition-all duration-300"
+              className="h-10 w-auto max-w-[120px] object-contain transition-all duration-300"
             />
             <span className={cn("hidden sm:block font-display text-sm tracking-cathedral uppercase transition-colors duration-300", logoText)}>
               Transforming Spirit

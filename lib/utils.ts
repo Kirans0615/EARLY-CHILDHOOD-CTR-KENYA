@@ -11,7 +11,7 @@ export const EASE = [0.16, 1, 0.3, 1] as const;
 export const EASE_BLUR = [0.2, 0.9, 0.3, 1] as const;
 
 export const ASSETS = {
-  logo:    "https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/Final%20TSM%20Logo%20(1)_edited.avif",
+  logo:    "https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/ddc4f3_2ed7b7c54bc8498098ba4ddbcccdd24e~mv2.avif",
   hero:    "https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/0e3f49_d911cb407c0c4cefb01018a7dc3df823~mv2.avif",
   donate:  "https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/DONATE%20(2).avif",
   mission1:"https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/IMG_8867.avif",
