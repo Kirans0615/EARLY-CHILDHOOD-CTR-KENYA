@@ -23,8 +23,8 @@ export function KenyaImmersive() {
       <div className="absolute inset-0 -z-10" aria-hidden>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/pexels-lagosfoodbank-9823013.jpg" alt="" className="h-full w-full object-cover object-center" loading="eager" decoding="async" />
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/60 via-charcoal/70 to-charcoal/95" />
-        <div className="absolute inset-0 bg-ember-glow opacity-40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/85 to-charcoal/98" />
+        <div className="absolute inset-0 bg-ember-glow opacity-15" />
       </div>
 
       <div className="container relative pt-44 pb-24" style={{ minHeight: "92vh" }}>
