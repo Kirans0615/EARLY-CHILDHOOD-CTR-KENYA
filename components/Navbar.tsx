@@ -82,14 +82,14 @@ export function Navbar() {
       >
         <div className="container flex h-16 lg:h-20 items-center justify-between gap-6">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 shrink-0 transition-colors duration-300" aria-label="TSM home">
+          <Link href="/" className="flex items-center gap-2 shrink-0 transition-colors duration-300" aria-label="TSM home">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={ASSETS.logo}
               alt="Transforming Spirit Ministries"
-              className="h-10 w-auto max-w-[120px] object-contain transition-all duration-300"
+              className="h-6 w-auto max-w-[80px] object-contain transition-all duration-300"
             />
-            <span className={cn("hidden sm:block font-display text-sm tracking-cathedral uppercase transition-colors duration-300", logoText)}>
+            <span className={cn("hidden sm:block font-display text-sm leading-none tracking-cathedral uppercase transition-colors duration-300", logoText)}>
               Transforming Spirit
             </span>
           </Link>
