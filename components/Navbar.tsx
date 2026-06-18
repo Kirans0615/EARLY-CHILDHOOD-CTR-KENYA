@@ -96,7 +96,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: EASE }}
-            className="lg:hidden fixed inset-0 bg-charcoal/97 backdrop-blur-lg z-40"
+            className="lg:hidden fixed inset-0 bg-charcoal/60 backdrop-blur-2xl z-40"
           >
             <div className="container h-full pt-24 pb-12 flex flex-col">
               <nav className="flex flex-col items-center gap-3 mt-12 mb-auto" aria-label="Mobile primary">
