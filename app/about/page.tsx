@@ -50,11 +50,11 @@ export default function AboutPage() {
       {/* Pillars */}
       <section className="bg-ivory py-28 md:py-32" data-navbar="light">
         <div className="container">
-          <p className="label-spaced text-orange mb-3">Pillars</p>
-          <h2 className="font-display text-charcoal text-balance" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
+          <p className="label-spaced text-orange mb-3 text-center">Pillars</p>
+          <h2 className="font-display text-charcoal text-balance text-center" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
             What holds the work together.
           </h2>
-          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-14 max-w-4xl">
+          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-14 max-w-4xl mx-auto">
             {PILLARS.map((p) => (
               <article key={p.num} className="flex flex-col items-center text-center">
                 <div className="w-28 h-20 flex items-center mb-4">
