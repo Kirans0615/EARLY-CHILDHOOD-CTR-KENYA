@@ -17,7 +17,7 @@ export default function DonatePage() {
   return (
     <>
       {/* Hero with donate banner image */}
-      <section className="relative bg-charcoal text-ivory pt-44 md:pt-52 pb-20 overflow-hidden">
+      <section className="relative bg-charcoal text-ivory pt-44 md:pt-52 pb-20 overflow-hidden" data-navbar="dark">
         <div className="absolute inset-0 -z-10" aria-hidden>
           {/* eslint-disable-next-line @next/next/no-img-element */}
            <img src={ASSETS.donate} alt="" className="h-full w-full object-cover opacity-30" loading="lazy" decoding="async" />
@@ -35,7 +35,7 @@ export default function DonatePage() {
       <DonateAltar />
 
       {/* Ways */}
-      <section className="bg-ivory py-28">
+      <section className="bg-ivory py-28" data-navbar="light">
         <div className="container max-w-3xl">
           <p className="label-spaced text-orange mb-3">Practical Impact</p>
           <h2 className="font-display text-charcoal text-balance leading-tight" style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}>

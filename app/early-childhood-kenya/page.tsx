@@ -15,7 +15,7 @@ export default function KenyaPage() {
     <>
       <KenyaImmersive />
 
-      <section className="relative bg-ivory py-28 overflow-hidden">
+      <section className="relative bg-ivory py-28 overflow-hidden" data-navbar="light">
         <ScriptureWatermark text="THE LEAST OF THESE" className="text-crimson/5" />
         <div className="container relative z-10 grid lg:grid-cols-2 gap-14 items-center">
           <div>
@@ -48,7 +48,7 @@ export default function KenyaPage() {
         </div>
       </section>
 
-      <section className="bg-crimson-deep text-ivory py-20 text-center">
+      <section className="bg-crimson-deep text-ivory py-20 text-center" data-navbar="dark">
         <blockquote className="font-italic italic text-balance max-w-3xl mx-auto leading-snug" style={{ fontSize: "clamp(1.5rem, 3.5vw, 2.5rem)" }}>
           &ldquo;{SCRIPTURE.acts18}&rdquo;
         </blockquote>

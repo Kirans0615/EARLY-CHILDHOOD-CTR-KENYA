@@ -22,7 +22,7 @@ export default function StudentMissionsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-charcoal text-ivory pt-44 md:pt-52 pb-24 overflow-hidden">
+      <section className="relative bg-charcoal text-ivory pt-44 md:pt-52 pb-24 overflow-hidden" data-navbar="dark">
         <div className="absolute inset-0 -z-10" aria-hidden>
           {/* eslint-disable-next-line @next/next/no-img-element */}
            <img src={ASSETS.mission1} alt="" className="h-full w-full object-cover opacity-30" loading="lazy" decoding="async" />
@@ -45,7 +45,7 @@ export default function StudentMissionsPage() {
       <StudentMagazine />
 
       {/* Benefits */}
-      <section className="bg-charcoal text-ivory py-24">
+      <section className="bg-charcoal text-ivory py-24" data-navbar="dark">
         <div className="container max-w-5xl">
           <h2 className="font-display text-balance leading-tight max-w-3xl" style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}>
             What students take home from a TSM trip.
@@ -72,7 +72,7 @@ export default function StudentMissionsPage() {
       </section>
 
       {/* Interest form */}
-      <section className="bg-ivory py-28">
+      <section className="bg-ivory py-28" data-navbar="light">
         <div className="container max-w-2xl">
           <p className="label-spaced text-orange mb-3">Get Involved</p>
           <h2 className="font-display text-charcoal text-balance leading-tight" style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}>

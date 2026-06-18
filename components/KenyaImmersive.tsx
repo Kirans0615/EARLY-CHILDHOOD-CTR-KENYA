@@ -19,7 +19,7 @@ const STEPS: Milestone[] = [
 /** Full-bleed immersive Kenya feature — overlay text on the image. */
 export function KenyaImmersive() {
   return (
-    <section className="relative isolate text-ivory" style={{ minHeight: "92vh" }}>
+    <section className="relative isolate text-ivory" data-navbar="dark" style={{ minHeight: "92vh" }}>
       <div className="absolute inset-0 -z-10" aria-hidden>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/pexels-lagosfoodbank-9823013.jpg" alt="" className="h-full w-full object-cover object-center" loading="eager" decoding="async" />

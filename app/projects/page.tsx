@@ -27,7 +27,7 @@ const PROJECTS: Project[] = [
 export default function ProjectsPage() {
   return (
     <>
-      <section className="relative bg-charcoal text-ivory pt-44 md:pt-52 pb-20 overflow-hidden">
+      <section className="relative bg-charcoal text-ivory pt-44 md:pt-52 pb-20 overflow-hidden" data-navbar="dark">
         <ScriptureWatermark text="THE NATIONS" className="text-ivory/[0.04]" />
         <div className="container relative z-10">
           <p className="label-spaced text-flame mb-6">Projects</p>
@@ -41,7 +41,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Editorial alternating rows */}
-      <section className="bg-ivory">
+      <section className="bg-ivory" data-navbar="light">
         {PROJECTS.map((p, i) => {
           const reverse = i % 2 === 1;
           return (
@@ -74,7 +74,7 @@ export default function ProjectsPage() {
         })}
       </section>
 
-      <section className="bg-charcoal text-ivory py-24 text-center">
+      <section className="bg-charcoal text-ivory py-24 text-center" data-navbar="dark">
         <p className="font-italic italic text-ivory/85 text-xl max-w-2xl mx-auto">
           &ldquo;{SCRIPTURE.acts18}&rdquo;
         </p>

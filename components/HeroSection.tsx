@@ -19,6 +19,7 @@ export function HeroSection() {
   return (
     <section
       className="relative isolate overflow-hidden bg-charcoal text-ivory"
+      data-navbar="dark"
       style={{ minHeight: "100dvh" }}
     >
       {/* Preload the hero AVIF — hoisted into <head> by Next 14. */}

@@ -13,7 +13,7 @@ const LEADERS = [
 
 export function LeadershipPreview() {
   return (
-    <section className="relative bg-ivory py-24 md:py-32">
+    <section className="relative bg-ivory py-24 md:py-32" data-navbar="light">
       <div className="container text-center">
         <p className="label-spaced text-orange mb-3">Leadership</p>
         <h2

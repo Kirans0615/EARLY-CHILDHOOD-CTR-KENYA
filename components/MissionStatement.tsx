@@ -11,7 +11,7 @@ import { SCRIPTURE, EASE_BLUR } from "@/lib/utils";
  */
 export function MissionStatement() {
   return (
-    <section className="relative bg-ivory py-32 md:py-44 overflow-hidden">
+    <section className="relative bg-ivory py-32 md:py-44 overflow-hidden" data-navbar="light">
       {/* Thin horizontal rules */}
       <div aria-hidden className="absolute left-0 right-0 top-12 h-px bg-crimson/15" />
       <div aria-hidden className="absolute left-0 right-0 bottom-12 h-px bg-crimson/15" />

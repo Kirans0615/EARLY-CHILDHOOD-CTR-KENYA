@@ -23,7 +23,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Opener */}
-      <section className="relative isolate bg-charcoal text-ivory pt-44 md:pt-52 pb-28 overflow-hidden">
+      <section className="relative isolate bg-charcoal text-ivory pt-44 md:pt-52 pb-28 overflow-hidden" data-navbar="dark">
         <div className="absolute inset-0 -z-10" aria-hidden>
           {/* eslint-disable-next-line @next/next/no-img-element */}
            <img src={ASSETS.mission1} alt="" className="h-full w-full object-cover opacity-25" loading="lazy" decoding="async" />
@@ -48,7 +48,7 @@ export default function AboutPage() {
       <MissionStatement />
 
       {/* Pillars */}
-      <section className="bg-ivory py-28 md:py-32">
+      <section className="bg-ivory py-28 md:py-32" data-navbar="light">
         <div className="container">
           <p className="label-spaced text-orange mb-3">Pillars</p>
           <h2 className="font-display text-charcoal text-balance" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
@@ -71,7 +71,7 @@ export default function AboutPage() {
       <LeadershipTimeline />
 
       {/* Closing CTA */}
-      <section className="relative bg-crimson-deep text-ivory py-24 overflow-hidden">
+      <section className="relative bg-crimson-deep text-ivory py-24 overflow-hidden" data-navbar="dark">
         <FlameParticles count={20} zClass="z-0" />
         <div className="container relative z-10 text-center max-w-3xl">
           <p className="label-spaced text-flame mb-3">A Word</p>

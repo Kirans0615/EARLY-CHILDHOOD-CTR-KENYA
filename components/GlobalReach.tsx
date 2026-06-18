@@ -32,7 +32,7 @@ const REGIONS = [
 export function GlobalReach() {
   const [active, setActive] = React.useState("ea");
   return (
-    <section className="relative bg-charcoal text-ivory py-24 md:py-32 overflow-hidden">
+    <section className="relative bg-charcoal text-ivory py-24 md:py-32 overflow-hidden" data-navbar="dark">
       <div aria-hidden className="absolute inset-0 bg-ember-glow opacity-45 pointer-events-none" />
       <div className="container relative z-10 grid lg:grid-cols-[1.1fr_1fr] gap-14 lg:gap-20 items-center">
         <div>

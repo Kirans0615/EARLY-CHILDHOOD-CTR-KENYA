@@ -9,6 +9,7 @@ export function DonateCTA() {
   return (
     <section
       className="relative isolate text-ivory py-28 md:py-36 overflow-hidden"
+      data-navbar="dark"
       style={{
         background:
           "linear-gradient(135deg, #6B1212 0%, #8B1A1A 35%, #1A1008 100%)",

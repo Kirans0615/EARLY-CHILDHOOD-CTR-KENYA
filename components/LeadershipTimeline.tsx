@@ -41,7 +41,7 @@ const LEADERS: Leader[] = [
 
 export function LeadershipTimeline() {
   return (
-    <section className="relative bg-ivory py-28 md:py-40 overflow-hidden">
+    <section className="relative bg-ivory py-28 md:py-40 overflow-hidden" data-navbar="light">
       <div aria-hidden className="absolute top-12 left-0 right-0 h-px bg-crimson/20" />
       <div className="container relative">
         <div className="text-center mb-16 md:mb-24">

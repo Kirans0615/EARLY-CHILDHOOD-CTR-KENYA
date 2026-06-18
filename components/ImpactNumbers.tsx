@@ -52,7 +52,7 @@ function Count({ to, suffix, duration = 1.4, text }: { to: number; suffix?: stri
  */
 export function ImpactNumbers() {
   return (
-    <section className="relative bg-charcoal text-ivory py-24 md:py-28">
+    <section className="relative bg-charcoal text-ivory py-24 md:py-28" data-navbar="dark">
       <div className="container">
         <div className="grid grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-orange/35">
           {STATS.map((s, i) => (

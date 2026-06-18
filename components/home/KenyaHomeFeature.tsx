@@ -13,7 +13,7 @@ const MILESTONES = [
 /** Full-bleed Kenya feature. Image background, dark bottom gradient, text overlay. */
 export function KenyaHomeFeature() {
   return (
-    <section className="relative isolate text-ivory overflow-hidden" style={{ minHeight: "88vh" }}>
+    <section className="relative isolate text-ivory overflow-hidden" data-navbar="dark" style={{ minHeight: "88vh" }}>
       <div className="absolute inset-0 -z-10" aria-hidden>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img

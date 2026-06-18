@@ -9,7 +9,7 @@ import { CrossMark } from "@/components/decor/CrossMark";
  */
 export function Footer() {
   return (
-    <footer className="bg-charcoal text-ivory border-t-2 border-orange/70">
+    <footer className="bg-charcoal text-ivory border-t-2 border-orange/70" data-navbar="dark">
       <div className="container py-20 text-center">
         <CrossMark className="h-10 w-auto mx-auto text-flame mb-8" strokeWidth={2} />
         {/* eslint-disable-next-line @next/next/no-img-element */}

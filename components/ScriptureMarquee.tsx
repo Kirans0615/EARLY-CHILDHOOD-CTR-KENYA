@@ -15,7 +15,7 @@ export function ScriptureMarquee() {
   );
 
   return (
-    <section className="bg-crimson overflow-hidden border-y border-orange/35">
+    <section className="bg-crimson overflow-hidden border-y border-orange/35" data-navbar="dark">
       <div className="flex whitespace-nowrap py-3.5 animate-marquee">
         <div className="flex items-center gap-10 pr-10">
           {Array.from({ length: 8 }).map((_, i) => piece(i))}

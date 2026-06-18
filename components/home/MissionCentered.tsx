@@ -5,7 +5,7 @@ import { SCRIPTURE, EASE_BLUR } from "@/lib/utils";
 
 export function MissionCentered() {
   return (
-    <section className="relative bg-ivory py-24 md:py-32">
+    <section className="relative bg-ivory py-24 md:py-32" data-navbar="light">
       <div aria-hidden className="absolute left-0 right-0 top-12 h-px bg-crimson/20" />
       <div aria-hidden className="absolute left-0 right-0 bottom-12 h-px bg-crimson/20" />
 
