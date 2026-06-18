@@ -43,7 +43,7 @@ export function KenyaHomeFeature() {
             style={{ fontSize: "clamp(2.5rem, 5.5vw, 5.25rem)" }}
           >
             The Eta Prime
-            <span className="block text-flame italic font-italic">Wing.</span>
+            <span className="block text-flame italic font-italic pb-2">Wing.</span>
           </h2>
           <p className="mt-5 font-italic italic text-orange-soft text-lg md:text-xl max-w-2xl leading-relaxed">
             Construction complete. Opened January 2026. Built by faith, sweat, and a team of students from Washington, DC.
