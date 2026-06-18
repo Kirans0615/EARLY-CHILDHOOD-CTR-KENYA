@@ -27,7 +27,7 @@ export default function DonatePage() {
           <p className="label-spaced text-flame mb-6">Give</p>
           <h1 className="font-display leading-[0.9] text-balance text-flame" style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)" }}>
             Transform a life
-            <span className="block italic font-italic">today.</span>
+            <span className="block italic font-italic pb-2">today.</span>
           </h1>
         </div>
       </section>
