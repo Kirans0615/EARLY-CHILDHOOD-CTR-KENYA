@@ -19,7 +19,7 @@ export function MissionStatement() {
       <div className="container grid lg:grid-cols-[2fr_3fr] gap-12 lg:gap-20 items-center">
         {/* Left — outline cross */}
         <div className="relative flex justify-center lg:justify-start">
-          <CrossMark className="h-[60vh] w-auto text-crimson/45" strokeWidth={1.5} />
+          <CrossMark className="h-[60vh] w-auto text-crimson/45 mt-10" strokeWidth={1.5} />
           <span aria-hidden className="absolute -top-2 left-1/2 -translate-x-1/2 label-spaced text-orange/70 whitespace-nowrap">
             One Spirit · One Mission
           </span>
