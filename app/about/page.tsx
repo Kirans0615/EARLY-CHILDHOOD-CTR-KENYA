@@ -5,7 +5,7 @@ import { LeadershipTimeline } from "@/components/LeadershipTimeline";
 import { FlameParticles } from "@/components/decor/FlameParticles";
 import { ScriptureWatermark } from "@/components/decor/ScriptureWatermark";
 import { Button } from "@/components/ui/button";
-import { SCRIPTURE, ASSETS } from "@/lib/utils";
+import { SCRIPTURE, ASSETS, cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "About",
@@ -56,7 +56,7 @@ export default function AboutPage() {
           </h2>
           <div className="mt-14 grid md:grid-cols-2 gap-12">
             {PILLARS.map((p) => (
-              <article key={p.num} className="relative pl-20">
+              <article key={p.num} className={cn("relative", p.num === "III" ? "pl-28" : "pl-20")}>
                 <span className="absolute left-0 top-0 font-display font-black text-flame leading-none" style={{ fontSize: "clamp(3.5rem, 5vw, 5rem)" }} aria-hidden>
                   {p.num}
                 </span>
