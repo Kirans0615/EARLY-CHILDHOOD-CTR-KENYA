@@ -57,9 +57,9 @@ export default function AboutPage() {
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-14 max-w-4xl">
             {PILLARS.map((p) => (
               <article key={p.num} className="flex flex-col items-center text-center">
-                <div className="w-28 h-20 flex items-center justify-center mb-4">
+                <div className="w-28 h-20 flex items-center mb-4">
                   <span
-                    className="font-display font-black text-flame leading-none"
+                    className="font-display font-black text-flame leading-none block w-full text-center"
                     style={{ fontSize: "clamp(3.5rem, 5vw, 5rem)" }}
                     aria-hidden
                   >
