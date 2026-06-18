@@ -5,7 +5,7 @@ import { LeadershipTimeline } from "@/components/LeadershipTimeline";
 import { FlameParticles } from "@/components/decor/FlameParticles";
 import { ScriptureWatermark } from "@/components/decor/ScriptureWatermark";
 import { Button } from "@/components/ui/button";
-import { SCRIPTURE, ASSETS, cn } from "@/lib/utils";
+import { SCRIPTURE, ASSETS } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "About",
@@ -54,12 +54,18 @@ export default function AboutPage() {
           <h2 className="font-display text-charcoal text-balance" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
             What holds the work together.
           </h2>
-          <div className="mt-14 grid md:grid-cols-2 gap-12">
+          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-14 max-w-4xl">
             {PILLARS.map((p) => (
-              <article key={p.num} className="relative pl-32">
-                <span className="absolute left-4 top-0 font-display font-black text-flame leading-none" style={{ fontSize: "clamp(3.5rem, 5vw, 5rem)" }} aria-hidden>
-                  {p.num}
-                </span>
+              <article key={p.num} className="flex flex-col items-center text-center">
+                <div className="w-28 h-20 flex items-center justify-center mb-4">
+                  <span
+                    className="font-display font-black text-flame leading-none"
+                    style={{ fontSize: "clamp(3.5rem, 5vw, 5rem)" }}
+                    aria-hidden
+                  >
+                    {p.num}
+                  </span>
+                </div>
                 <h3 className="font-display text-2xl md:text-3xl text-charcoal leading-tight">{p.title}</h3>
                 <p className="mt-3 font-italic italic text-charcoal/80 leading-relaxed text-lg">{p.body}</p>
               </article>
