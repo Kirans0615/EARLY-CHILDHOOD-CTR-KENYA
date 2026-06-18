@@ -38,7 +38,7 @@ export function KenyaImmersive() {
         >
           <p className="label-spaced text-flame mb-6">Featured Project · Kisumu, Kenya</p>
           <h2 className="font-display text-balance leading-[0.92]" style={{ fontSize: "clamp(2.5rem, 6.5vw, 6rem)" }}>
-            The Eta Prime <span className="text-flame italic font-italic">Wing.</span>
+            The Eta Prime <span className="text-flame italic font-italic pb-4 inline-block">Wing.</span>
           </h2>
           <p className="mt-6 text-orange-soft font-italic italic text-xl md:text-2xl max-w-2xl">
             Construction complete. Opened January 2026. Built by faith, sweat, and a team of students from Washington, DC.
