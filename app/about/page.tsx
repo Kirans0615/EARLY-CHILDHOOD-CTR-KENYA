@@ -56,8 +56,8 @@ export default function AboutPage() {
           </h2>
           <div className="mt-14 grid md:grid-cols-2 gap-12">
             {PILLARS.map((p) => (
-              <article key={p.num} className={cn("relative", p.num === "III" ? "pl-28" : "pl-20")}>
-                <span className="absolute left-0 top-0 font-display font-black text-flame leading-none" style={{ fontSize: "clamp(3.5rem, 5vw, 5rem)" }} aria-hidden>
+              <article key={p.num} className="relative pl-32">
+                <span className="absolute left-4 top-0 font-display font-black text-flame leading-none" style={{ fontSize: "clamp(3.5rem, 5vw, 5rem)" }} aria-hidden>
                   {p.num}
                 </span>
                 <h3 className="font-display text-2xl md:text-3xl text-charcoal leading-tight">{p.title}</h3>
