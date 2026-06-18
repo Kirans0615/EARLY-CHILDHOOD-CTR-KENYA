@@ -4,7 +4,6 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { StickyDonateBanner } from "@/components/StickyDonateBanner";
-import { BackToTop } from "@/components/BackToTop";
 import { PageTransition } from "@/components/PageTransition";
 import { CandleWidget } from "@/components/CandleWidget";
 
@@ -69,7 +68,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <CandleWidget />
         <StickyDonateBanner />
-        <BackToTop />
         <Footer />
       </body>
     </html>

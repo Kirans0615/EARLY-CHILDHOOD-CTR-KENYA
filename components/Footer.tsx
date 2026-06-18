@@ -37,17 +37,23 @@ export function Footer() {
           </Link>
         </nav>
 
-        {/* Socials */}
+        {/* Social icon placeholders — kept visually, intentionally inert.
+            Swap each to <a href="..." aria-label="..."> when real social
+            URLs are available. */}
         <div className="flex items-center justify-center gap-4 mb-12">
-          {[Facebook, Instagram, Youtube].map((Icon, i) => (
-            <a
+          {[
+            { Icon: Facebook,  label: "Facebook (coming soon)" },
+            { Icon: Instagram, label: "Instagram (coming soon)" },
+            { Icon: Youtube,   label: "YouTube (coming soon)" },
+          ].map(({ Icon, label }, i) => (
+            <span
               key={i}
-              href="#"
-              aria-label="Social link"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-orange/35 text-flame hover:bg-flame hover:text-charcoal transition-colors"
+              role="img"
+              aria-label={label}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-orange/35 text-flame/85"
             >
               <Icon className="h-4 w-4" aria-hidden />
-            </a>
+            </span>
           ))}
           <a
             href="mailto:contact@transformingspiritministries.org"
