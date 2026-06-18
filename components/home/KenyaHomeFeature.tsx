@@ -16,8 +16,17 @@ export function KenyaHomeFeature() {
     <section className="relative isolate text-ivory overflow-hidden" style={{ minHeight: "88vh" }}>
       <div className="absolute inset-0 -z-10" aria-hidden>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-         <img src={ASSETS.kenya} alt="" className="h-full w-full object-cover" loading="lazy" decoding="async" />
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/35 via-charcoal/65 to-charcoal/97" />
+        <img
+          src="https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/pexels-alexasfotos-32461462.jpg"
+          alt=""
+          className="h-full w-full object-cover"
+          style={{ opacity: 0.75 }}
+          loading="lazy"
+          decoding="async"
+        />
+        {/* Base darkening pass + reading-side bottom gradient. */}
+        <div className="absolute inset-0 bg-charcoal/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/55 via-charcoal/75 to-charcoal/97" />
       </div>
 
       <div className="container relative pt-32 pb-24 flex flex-col" style={{ minHeight: "88vh" }}>
