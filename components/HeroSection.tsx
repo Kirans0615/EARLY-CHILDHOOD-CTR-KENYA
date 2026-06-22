@@ -41,23 +41,23 @@ export function HeroSection() {
         />
       </div>
 
-      {/* Horizontal gradient overlay — dark on left, clear on right */}
+      {/* Top-to-bottom gradient overlay — dark at top, clear toward bottom-center */}
       <div
         aria-hidden
         className="absolute inset-0 -z-20"
         style={{
           background:
-            "linear-gradient(90deg, rgba(26,16,8,0.95) 0%, rgba(26,16,8,0.92) 28%, rgba(26,16,8,0.7) 48%, rgba(26,16,8,0.4) 64%, rgba(26,16,8,0.2) 100%)",
+            "linear-gradient(180deg, rgba(26,16,8,0.92) 0%, rgba(26,16,8,0.82) 25%, rgba(26,16,8,0.50) 50%, rgba(26,16,8,0.18) 72%, rgba(26,16,8,0.05) 100%)",
         }}
       />
 
-      {/* Soft vignette around photo edges only */}
+      {/* Soft vignette — transparent window centered on bottom-center where people are */}
       <div
         aria-hidden
         className="absolute inset-0 -z-10 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 80% 60% at 75% 50%, transparent 35%, rgba(26,16,8,0.4) 100%)",
+            "radial-gradient(ellipse 90% 70% at 50% 80%, transparent 35%, rgba(26,16,8,0.25) 100%)",
         }}
       />
 
