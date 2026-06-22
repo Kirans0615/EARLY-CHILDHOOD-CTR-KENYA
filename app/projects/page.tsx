@@ -17,11 +17,11 @@ interface Project {
 }
 
 const PROJECTS: Project[] = [
-  { region: "East Africa",     title: "Eta Prime Wing — Kisumu, Kenya",       body: "Construction complete. Doors opened January 2026. Ongoing teacher and operations support.", image: ASSETS.kenya },
-  { region: "West Africa",     title: "Liberia medical clinic & Gospel work", body: "Community-based medical care paired with Gospel preaching in cities recovering from instability.", image: ASSETS.mission1 },
-  { region: "Southern Africa", title: "A chicken for a family",               body: "Tangible food relief for hungry families — alongside pastor housing and rural church planting.",      image: ASSETS.mission2 },
-  { region: "Asia",            title: "India discipleship & pastor training", body: "Leadership formation and direct pastor support across India's under-resourced regions.",                image: ASSETS.hero },
-  { region: "Europe & Israel", title: "Pilgrim Way Ministries journeys",      body: "Mission tours and prophetic teaching travels connecting believers to the lands of Scripture.",         image: ASSETS.mission1 },
+  { region: "East Africa",     title: "Eta Prime Wing — Kisumu, Kenya",       body: "Construction complete. Doors opened January 2026. Ongoing teacher and operations support.", image: ASSETS.projectKenya },
+  { region: "West Africa",     title: "Liberia medical clinic & Gospel work", body: "Community-based medical care paired with Gospel preaching in cities recovering from instability.", image: ASSETS.projectLiberia },
+  { region: "Southern Africa", title: "A chicken for a family",               body: "Tangible food relief for hungry families — alongside pastor housing and rural church planting.",      image: ASSETS.projectSouthAfrica },
+  { region: "Asia",            title: "India discipleship & pastor training", body: "Leadership formation and direct pastor support across India's under-resourced regions.",                image: ASSETS.projectIndia },
+  { region: "Europe & Israel", title: "Pilgrim Way Ministries journeys",      body: "Mission tours and prophetic teaching travels connecting believers to the lands of Scripture.",         image: ASSETS.projectJerusalem },
 ];
 
 export default function ProjectsPage() {

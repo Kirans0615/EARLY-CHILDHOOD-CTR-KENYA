@@ -11,12 +11,17 @@ export const EASE = [0.16, 1, 0.3, 1] as const;
 export const EASE_BLUR = [0.2, 0.9, 0.3, 1] as const;
 
 export const ASSETS = {
-  logo:    "https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/ddc4f3_2ed7b7c54bc8498098ba4ddbcccdd24e~mv2.avif",
-  hero:    "https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/0e3f49_d911cb407c0c4cefb01018a7dc3df823~mv2.avif",
-  donate:  "https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/DONATE%20(2).avif",
-  mission1:"https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/IMG_8867.avif",
-  mission2:"https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/IMG_8900.avif",
-  kenya:   "https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/ddc4f3_2ed7b7c54bc8498098ba4ddbcccdd24e~mv2.avif",
+  logo:           "https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/ddc4f3_2ed7b7c54bc8498098ba4ddbcccdd24e~mv2.avif",
+  hero:           "https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/0e3f49_d911cb407c0c4cefb01018a7dc3df823~mv2.avif",
+  donate:         "https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/DONATE%20(2).avif",
+  mission1:       "https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/IMG_8867.avif",
+  mission2:       "https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/IMG_8900.avif",
+  kenya:          "https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/ddc4f3_2ed7b7c54bc8498098ba4ddbcccdd24e~mv2.avif",
+  projectKenya:        "https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/project-kenya.png",
+  projectLiberia:      "https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/project-liberia.png",
+  projectSouthAfrica:  "https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/project-southern-africa.png",
+  projectIndia:        "https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/project-india.png",
+  projectJerusalem:    "https://raw.githubusercontent.com/Kirans0615/EARLY-CHILDHOOD-CTR-KENYA/main/project-jerusalem.png",
 } as const;
 
 export const ZEFFY_URL =
